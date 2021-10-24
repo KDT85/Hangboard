@@ -9,6 +9,14 @@ function hang(){
                 if (hangtime < 0 ){
         
                     clearInterval(ht);
+                    let rt = setInterval(() => {
+                        document.getElementById("timer").innerHTML = `Rest! ${resttime}`;
+                        resttime--;
+                        if (resttime < 0){
+                            clearInterval(rt)
+                        }
+                        
+                    }, interval);
         }
 
 
