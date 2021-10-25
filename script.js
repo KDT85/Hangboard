@@ -1,40 +1,36 @@
 
-    var setno = 3;
-    var interval = 200;
-    var hangtime = 3;
-    var resttime = 3;
-    function operate(){
-        setInterval(() => {
-           if(setno > 0){
-               hang()
-               if(hangtime < 0){
-                    rest()
-                    if(resttime < 0){
-                        sets()
-                        console.log(setno)
-                    }
-               }
-           } 
-        }, interval);
+    function hang(hangtime, resttime){
+    
+        var interval = 500;
+    
+        var hangtime = 7;
+        var resttime = 3;
+        
+        while(hangtime > 0){
+            console.log(`Hang - ${hangtime}`);
+            hangtime --;
+            
+            if (hangtime == 0){
+                while(resttime > 0){
+                    console.log(`Rest - ${resttime}`);
+                    resttime --;
+
+
+                    
+                }
+            }
+        }
     }
-
-
-
-function hang(){
-    document.getElementById("timer").innerHTML = `Hang! ${hangtime}`;
-    hangtime--;
-}
-
-function rest(){
-    document.getElementById("timer").innerHTML = `Rest! ${resttime}`;
-    resttime--;
-}    
-
-function sets(){
-    setno--;
-
-}
-        
-        
-
-
+    
+    function go(){
+        var sets = 4; 
+        for(var i = 0; i < sets; i++){
+            hang();
+            //sets--;
+            if (sets == i){
+                console.log("Finish");
+                //return;
+            }
+        }
+        return;
+    }
