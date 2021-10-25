@@ -1,25 +1,34 @@
-function hang(){
+
+function hang(hangtime, resttime){
+    
     var interval = 500;
+
     var hangtime = 7;
     var resttime = 3;
-
-    let ht = setInterval(() => {
-                document.getElementById("timer").innerHTML = `Hang! ${hangtime}`;
-                hangtime--;
-                if (hangtime < 0 ){
+    
+    while(hangtime > 0){
+        console.log(`Hang - ${hangtime}`);
+        hangtime --;
         
-                    clearInterval(ht);
-                    let rt = setInterval(() => {
-                        document.getElementById("timer").innerHTML = `Rest! ${resttime}`;
-                        resttime--;
-                        if (resttime < 0){
-                            clearInterval(rt)
-                        }
-                        
-                    }, interval);
+        if (hangtime == 0){
+            while(resttime > 0){
+                console.log(`Rest - ${resttime}`);
+                resttime --;
+                go()
+            }
         }
+    }
+}
 
-
-        
-    }, interval);
+function go(){
+    var sets = 4; 
+    while(sets > 0){
+        hang();
+        sets--;
+        if (sets < 0){
+            console.log("Finish");
+            //return;
+        }
+    }
+    return;
 }
