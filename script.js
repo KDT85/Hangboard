@@ -23,7 +23,7 @@
     }
     
     function go(){
-        var sets = 4; 
+        var sets = 2; 
         for(var i = 0; i < sets; i++){
             hang();
             //sets--;
