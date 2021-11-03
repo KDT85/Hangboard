@@ -22,7 +22,7 @@ ex = 5
 while sets > 0:
 	cd( ex, h, r)
 	sets -= 1
-	if sets <0:
+	if sets <=0:
 		print("finish!")
 	
 
