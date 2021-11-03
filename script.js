@@ -1,4 +1,3 @@
-
 function hang(hangtime, resttime){
     
     var interval = 500;
@@ -14,18 +13,20 @@ function hang(hangtime, resttime){
             while(resttime > 0){
                 console.log(`Rest - ${resttime}`);
                 resttime --;
-                go()
+
+
+                
             }
         }
     }
 }
 
 function go(){
-    var sets = 4; 
-    while(sets > 0){
+    var sets = 2; 
+    for(var i = 0; i < sets; i++){
         hang();
-        sets--;
-        if (sets < 0){
+        //sets--;
+        if (sets == i){
             console.log("Finish");
             //return;
         }
