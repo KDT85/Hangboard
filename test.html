@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function go(){
+
+            var x = 7;
+            var y = new Date().getSeconds();
+            var z = y + 1;
+            setInterval(function(){
+                var now = new Date().getSeconds();
+                document.getElementById("secs").innerHTML = x
+
+
+                    if (now == z){
+                        z++;
+                        y++;
+                        x--;
+
+                    }
+                
+            },1000)
+        }
+    </script>
+</head>
+<body>
+    <h1 id = "secs">go</h1>
+    <button onclick="go()">go</button>
+</body>
+</html>
